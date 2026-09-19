@@ -1,0 +1,65 @@
+Banking System:
+    
+    
+    
+    
+    
+class Acc:
+    def __init__(self,holder,bal):
+        self.holder=holder
+        self.balance=bal
+        
+        
+    @staticmethod
+    def int_cal(princ,rate,time):
+        interest=(princ*rate*time)/100
+        print("your interest is:--", interest)
+       
+        
+         
+            
+     
+    def credit(self,amount):
+        self.balance+=amount
+        print("Hello...", self.holder,"Updated balance is:--",self.balance)
+
+
+    def debit(self,amount):
+        if (amount>=self.balance):
+            print("Not enough funds")
+            print("available bal is",self.balance)
+        else:
+            
+            self.balance-=amount
+            print("Hello MR.", self.holder,"Updated balance is:--",self.balance)
+        
+    def get_bal(self):
+        print("Hello", self.holder,"remaining bal:--", self.balance)
+        #print(self.balance)
+        return self.balance
+        #print(self.balance)
+        print(self.balance)
+        
+    
+        
+        
+        
+acc1=Acc("Aditi",15000)
+acc1.debit(2000)
+acc1.credit(5000)
+acc1.debit(20000)
+print("your remaining balance is",acc1.balance, "thank you")
+acc1.get_balance()
+acc1.int_cal(acc1.balance,2,3)
+a=float(input("enter principal amount:--"))
+b=float(input("enter ROI:--"))
+c=float(input("enter time:--"))
+acc1.int_cal(a,b,c)
+
+
+
+acc2=Acc("Skyler",23000)
+acc2.debit(24000)
+acc2.credit(23500)
+acc2.debit(2000)
+acc2.get_bal()
